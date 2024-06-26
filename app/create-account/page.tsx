@@ -11,21 +11,35 @@ export default function CreateAccount() {
       </div>
       <form className="flex flex-col gap-3">
         {/*FormInput FormButton은 componenets 파일에서 새로 정의한 컴포넌트임*/}
-        <FormInput type="text" placeholder="Username" required errors={[]} />
-        <FormInput type="email" placeholder="Email" required errors={[]} />
         <FormInput
+          name="text"
+          type="text"
+          placeholder="Username"
+          required
+          errors={[]}
+        />
+        <FormInput
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+          errors={[]}
+        />
+        <FormInput
+          name="password"
           type="password"
           placeholder="Password"
           required
           errors={[]}
         />
         <FormInput
+          name="password"
           type="password"
           placeholder="Confirm Password"
           required
           errors={[]}
         />
-        <FormButton loading={false} text="Create Account" />
+        <FormButton text="Create Account" />
       </form>
       <SocialLogin />
     </div>
