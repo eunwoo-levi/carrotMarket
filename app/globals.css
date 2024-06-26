@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* a는 앵커를 뜻함
+    tailwind 에서 layer는 base, components, utilities가 있고
+    base 는 보통 css 적용되는 기본값을 새로 정의
+*/
+
+@layer base {
+  a {
+    @apply text-orange-500;
+  }
+}
+
+/* utilities 레이어는 Tailwind CSS의 유틸리티 클래스를 확장하거나
+   새로운 유틸리티 클래스를 추가하는 데 사용됩니다.
+   여기에서는 커스텀 유틸리티 클래스들을 정의합니다.
+*/
+@layer utilities {
+  .text-bigger-hello {
+    @apply text-3xl font-semibold;
+  }
+}
+
+/* 
+ components 레이어는 재사용 가능한 CSS 컴포넌트를 정의한다.
+   예를 들어, 버튼 스타일을 정의할 수 있다.
+"primary-btn" 이라는 className에 쓸 css component 를 새로 만들었음*/
+@layer components {
+  .primary-btn {
+    @apply w-full bg-orange-500 text-white font-medium 
+          rounded-md text-center hover:bg-orange-400 transition-colors;
+  }
+}
